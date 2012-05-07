@@ -26,6 +26,7 @@
 URL = "#{process.env.HUBOT_PLAY_URL}"
 
 authedRequest = (message, path, action, options, callback) ->
+  console.log message.message.user.githubLogin
   message.http("#{URL}#{path}")
     .query(login: message.message.user.githubLogin, token: process.env.HUBOT_PLAY_TOKEN)
     .header('Content-Length', 0)
