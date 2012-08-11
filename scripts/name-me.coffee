@@ -10,3 +10,8 @@ module.exports = (robot) ->
     msg.http("http://name-me.herokuapp.com/similar/#{words}")
       .get() (err, res, body) ->
         msg.send body
+
+  robot.respond /animal name( me)?/i, (msg) ->
+    msg.http("http://name-me.herokuapp.com/animal")
+      .get() (err, res, body) ->
+        msg.send body
